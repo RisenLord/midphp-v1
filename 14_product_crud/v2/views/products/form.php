@@ -9,7 +9,7 @@
 <form action="" method="post" enctype="multipart/form-data">
 
     <?php if ($product['image']) : ?>
-    <img src="<?php echo $product['image'] ?>" class="updateimg">
+    <img src="../../<?php echo $product['image'] ?>" class="updateimg">
     <?php endif; ?>
 
     <div class="mb-3">

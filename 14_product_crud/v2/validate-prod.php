@@ -12,8 +12,8 @@ if (!$price) {
     $errors[] = 'Product price required';
 }
 
-if (!is_dir('images')) {
-    mkdir('images');
+if (!is_dir(__DIR__ . '/images')) {
+    mkdir(__DIR__ . '/images');
 }
 
 if (empty($errors)) {
@@ -22,12 +22,12 @@ if (empty($errors)) {
 
     if ($image && $image['tmp_name']) {
         if ($product['image']) {
-            unlink($product['image']);
-        }
+            unlink(__DIR__ . '/' . $product['image']);
+        } //just added the magic __DIR__. to remain posting images in the super home img dir
 
         $imagePath = 'images/' . randomString(8) . '/' . $image['name'];
-        mkdir(dirname($imagePath));
+        mkdir(dirname(__DIR__ . '/' . $imagePath));
 
-        move_uploaded_file($image['tmp_name'], $imagePath);
+        move_uploaded_file($image['tmp_name'], __DIR__ . '/' . $imagePath);
     }
 }
