@@ -1,5 +1,5 @@
 <?php
-require_once "dbcon.php";
+require_once "../../dbcon.php";
 
 $search = $_GET['search'] ?? '';
 if ($search) {
@@ -16,7 +16,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<?php include_once "views/partials/header.php" ?>
+<?php include_once "../../views/partials/header.php" ?>
 
 
 <body>

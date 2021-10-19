@@ -1,6 +1,6 @@
 <?php
 
-require_once "dbcon.php";
+require_once "../../dbcon.php";
 
 $id = $_POST['id'] ?? null;
 
